@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <title></title>
     <link href="lib/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <style>
+        input.ng-dirty.ng-invalid {
+            background-color: palevioletred;
+        }
+
+        input.ng-dirty.ng-valid {
+            background-color: darkseagreen;
+        }
+    </style>
 </head>
 <body ng-controller="searchCtrl">
 
@@ -13,21 +22,37 @@
 
     <h2>{{ message}}</h2>
     <section>
-        <form class="form-horizontal" name="searchForm" novalidate>
+        <form class="form-horizontal" name="searchForm" novalidate ng-submit="searchMovie(title)">
             <div class="form-group">
                 <label class="col-md-2 control-label">Title</label>
 
                 <div class="col-md-10">
-                    <input type="text" class="form-control" placeholder="Title" required name="txtTitle"/>
+                    <input type="text" class="form-control" placeholder="Title" required name="txtTitle"
+                           ng-model="title" ng-minlength="2"/>
                 </div>
 
             </div>
             <div class="form-group">
                 <div class="col-md-10 col-md-offset-2">
-                    <button type="submit" class="btn btn-success btn-block" >Search</button>
+                    <button type="submit" class="btn btn-success btn-block" ng-disabled="searchForm.$invalid">Search
+                    </button>
                 </div>
             </div>
         </form>
+    </section>
+    <section ng-show="results">
+        <h2>Search Results</h2>
+
+        <div class="row">
+            <div class="col-md-4" ng-repeat="movie in results">
+
+                <img src="{{movie.posterPath}}"/>
+
+                <p>{{movie.title}}</p>
+
+            </div>
+        </div>
+
     </section>
 
 </div>

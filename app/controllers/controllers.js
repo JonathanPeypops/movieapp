@@ -1,2 +1,2 @@
 angular.module('movieApp.controllers', [])
-.constant('apiurl','http://angularmoviebackend.azurewebsites.net/api')
+.constant('apiUrl','http://angularmoviebackend.azurewebsites.net/api/')
