@@ -13,6 +13,9 @@ function searchCtlr($scope, $http, apiUrl, $log) {
             $scope.results = data;
         });
 
+        $scope.selectMovie = function (id) {
+            $scope.selectedId = id;
+        }
         $log.debug('run');
     }
 };
