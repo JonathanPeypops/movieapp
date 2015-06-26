@@ -1,10 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="movieApp">
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <link href="lib/bootstrap.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+
+<div class="container">
+
+    <h1 class="page-header">Movie App</h1>
+
+    <section>
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label class="col-md-2 control-label">Title</label>
+
+                <div class="col-md-10">
+                    <input type="text" class="form-control" placeholder="Title"/>
+                </div>
+
+            </div>
+            <div class="form-group">
+                <div class="col-md-10 col-md-offset-2">
+                    <button type="submit" class="btn btn-success btn-block">Search</button>
+                </div>
+            </div>
+        </form>
+    </section>
+
+</div>
+
+<script type="text/javascript" src="lib/angular.min.js"></script>
+<script type="text/javascript" src="app/app.js"></script>
+<script type="text/javascript" src="app/controllers/controllers.js"></script>
 
 </body>
 </html>
